@@ -1,0 +1,31 @@
+package com.vhfc.cr.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.vhfc.cr.model.Producto;
+import com.vhfc.cr.repository.ProductosRepository;
+
+@Service
+public class ProductosService {
+	@Autowired
+	ProductosRepository productosRepo;
+	public Producto crearProductos(Producto producto) {
+		return productosRepo.save(producto);
+	}
+	public List<Producto> listarProductos() {
+		return productosRepo.findAll();
+	}
+	public void borrarProductos(Long Id) {
+		productosRepo.deleteById(Id);
+	}
+	public Producto buscarProductoPorId (Long Id) {
+		return productosRepo.findById(Id).orElse(null);
+	}
+	
+	public Producto ModificarProducto (Producto producto) {
+		return productosRepo.save(producto);
+	}
+}

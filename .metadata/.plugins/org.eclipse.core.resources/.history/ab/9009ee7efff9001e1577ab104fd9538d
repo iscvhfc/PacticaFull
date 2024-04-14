@@ -1,0 +1,25 @@
+package com.vhfc.cr.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.vhfc.cr.model.Producto;
+import com.vhfc.cr.repository.ProductosRepository;
+
+
+
+@Controller
+@RequestMapping(path = "/productos")
+public class ProductosController {
+	  @Autowired
+	    private ProductosRepository productosRepository;
+	
+	@GetMapping(value = "/agregar")
+	public String agregarProducto(Model model) {
+	    model.addAttribute("producto", new Producto());
+	    return "productos/agregar_producto";
+	}
+}

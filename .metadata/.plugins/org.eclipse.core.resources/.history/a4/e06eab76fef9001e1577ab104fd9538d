@@ -1,0 +1,12 @@
+package com.vhfc.cr.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.vhfc.cr.repository.ProductosRepository;
+
+@Service
+public class ProductosService {
+	@Autowired
+	ProductosRepository productosrepository;
+}

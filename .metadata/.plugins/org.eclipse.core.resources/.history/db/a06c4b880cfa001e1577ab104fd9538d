@@ -1,0 +1,53 @@
+package com.vhfc.cr.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import com.vhfc.cr.model.Producto;
+import com.vhfc.cr.service.ProductosService;
+
+
+
+@Controller
+//@RequestMapping(path = "/productos")
+public class ProductosController {
+	  @Autowired
+	    private ProductosService productosService;
+	
+	@GetMapping("/producto")
+	@ResponseBody
+	public List <Producto> listarProducto() {	   
+	    return productosService.listarProductos() ;
+	}
+	@PostMapping("/producto")
+	@ResponseBody
+	public Producto agregarProducto(@RequestBody Producto producto) {	   
+	    return productosService.crearProductos(producto);
+	}
+	
+	@DeleteMapping("/producto/{id}")
+	public void eliminarProducto(@PathVariable Long id) {	   
+	    productosService.borrarProductos(id);
+	}
+	
+	@GetMapping("/producto/{id}")
+	@ResponseBody
+	public Producto buscarProducto(@PathVariable long id) {	   
+	    return productosService.buscarProductoPorId(id);
+	}
+	
+	@PutMapping("/producto")
+	public void actualizarProducto(@RequestBody Producto producto) {	   
+	    productosService.ModificarProducto(producto);
+	}
+	
+}
