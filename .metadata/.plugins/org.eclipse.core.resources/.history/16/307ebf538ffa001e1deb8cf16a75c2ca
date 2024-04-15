@@ -1,0 +1,5 @@
+package com.vhfc.cr.security.jwt;
+
+public class JwtUtils {
+
+}

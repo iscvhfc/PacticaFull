@@ -1,0 +1,5 @@
+package com.vhfc.cr.controller;
+
+public class CreateUserDTO {
+
+}

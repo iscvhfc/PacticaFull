@@ -1,0 +1,5 @@
+package com.vhfc.cr.model;
+
+public class UserEntity {
+
+}

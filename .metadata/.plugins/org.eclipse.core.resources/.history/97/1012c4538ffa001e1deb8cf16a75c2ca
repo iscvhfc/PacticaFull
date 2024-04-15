@@ -1,0 +1,5 @@
+package com.vhfc.cr.service;
+
+public class JwtService {
+
+}

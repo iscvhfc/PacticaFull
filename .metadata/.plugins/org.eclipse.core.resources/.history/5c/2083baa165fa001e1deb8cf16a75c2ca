@@ -1,0 +1,5 @@
+package com.vhfc.cr.security;
+
+public class SecurityConfig {
+
+}

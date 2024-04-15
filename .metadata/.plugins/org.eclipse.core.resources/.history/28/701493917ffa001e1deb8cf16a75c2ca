@@ -1,0 +1,5 @@
+package com.vhfc.cr.repository;
+
+public class UserRpository {
+
+}
